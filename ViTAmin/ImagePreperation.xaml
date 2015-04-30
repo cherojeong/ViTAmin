@@ -1,0 +1,32 @@
+﻿<Window x:Class="ViTAmin.ImagePreperation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="ImagePreperation" Height="631.89" Width="729.921">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListView Name="SignalListView" ItemsSource="{Binding IpiList}" Margin="10,10,0,10" HorizontalAlignment="Left" Width="457">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="2">
+                        <StackPanel>
+                            <Image HorizontalAlignment="Left" Source="{Binding Path=Image}" VerticalAlignment="Top" Width="427"/>
+                            <TextBlock Text="{Binding ImageName}" Width="427" TextWrapping="Wrap"/>
+                            <ComboBox ItemsSource="{Binding Path=SignalList, RelativeSource={RelativeSource AncestorType=Window}}" Name="combo" SelectedIndex="{Binding SignalIndex}"/>
+                            <TextBox Text="{Binding Value}"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListView>
+        <Button Content="Save Setting" HorizontalAlignment="Left" Margin="472,128,0,0" VerticalAlignment="Top" Width="237" Click="Done"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="472,100,0,0" TextWrapping="Wrap" Text="{Binding ImgWidth}" VerticalAlignment="Top" Width="115"/>
+        <Label Content="Width" HorizontalAlignment="Left" Margin="472,69,0,0" VerticalAlignment="Top" Width="115"/>
+        <Label Content="Height" HorizontalAlignment="Left" Margin="597,69,0,0" VerticalAlignment="Top" Width="115"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="597,100,0,0" TextWrapping="Wrap" Text="{Binding ImgHeight}" VerticalAlignment="Top" Width="115"/>
+        <Button Content="Select Folder" HorizontalAlignment="Left" Margin="472,10,0,0" VerticalAlignment="Top" Width="237" Click="Load"/>
+
+    </Grid>
+</Window>

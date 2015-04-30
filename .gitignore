@@ -1,0 +1,12 @@
+packages
+TestResults
+*.psess
+*.vsp
+*.vsp
+*.sln
+*.suo
+ViTAmin/bin
+ViTAmin/dll
+ViTAmin/obj
+ViTAmin/Properties
+
